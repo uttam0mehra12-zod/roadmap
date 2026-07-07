@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 Cybersecurity 90-Day Challenge | Hacking Mastery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --accent-dark: #0284c7;
+            --text: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1f3a 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, rgba(15, 23, 42, 0) 100%);
+        }
+
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(14, 165, 233, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent);
+        }
+
+        /* Phases Grid */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .phase-number {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .phase-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .phase-days {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .phase-description {
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .phase-topics {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .phase-topics li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .phase-topics li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 55%;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--secondary);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover .timeline-content {
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.15);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            width: 25px;
+            height: 25px;
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: var(--secondary);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .tool-card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .tool-card ul {
+            list-style: none;
+        }
+
+        .tool-card li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tool-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+
+        /* Milestones */
+        .milestones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .milestone {
+            background: var(--secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .milestone:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+        }
+
+        .milestone-week {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-task {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Success Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+
+        .metric-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric-day {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Resources */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: var(--secondary);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .resource-type {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .resource-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            border-top: 1px solid rgba(14, 165, 233, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 3rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            line-height: 40px;
+            transition: all 0.3s;
+            color: var(--accent);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--secondary);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 2rem 0;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent) 0%, #06b6d4 100%);
+            width: 0%;
+            animation: progress 2s ease-in-out forwards;
+        }
+
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                width: 100%;
+                text-align: left;
+                padding-left: 80px;
+                margin-left: 0;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 80px;
+            }
+
+            .timeline-dot {
+                left: 15px;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phase-card,
+        .tool-card,
+        .milestone,
+        .metric-card,
+        .resource-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .phase-card:nth-child(2) { animation-delay: 0.1s; }
+        .phase-card:nth-child(3) { animation-delay: 0.2s; }
+        .phase-card:nth-child(4) { animation-delay: 0.3s; }
+
+        /* Code Highlight */
+        code {
+            background: rgba(14, 165, 233, 0.1);
+            color: #06b6d4;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Ethical Banner */
+        .ethical-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0) 100%);
+            border: 2px solid var(--danger);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+
+        .ethical-banner h3 {
+            color: var(--danger);
+            margin-bottom: 1rem;
+        }
+
+        .ethical-banner ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .ethical-banner li {
+            color: var(--text-muted);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .ethical-banner li:before {
+            position: absolute;
+            left: 0;
+        }
+
+        .ethical-banner li:nth-child(-n+4):before {
+            content: "🚫";
+        }
+
+        .ethical-banner li:nth-child(n+5):before {
+            content: "✅";
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">🔒 CyberMastery</div>
+            <ul class="nav-links">
+                <li><a href="#phases">Phases</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#ethics">Ethics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🔒 90-Day Cybersecurity & Hacking Mastery Challenge</h1>
+            <p>Transform from beginner to cybersecurity professional in 90 days with our comprehensive roadmap</p>
+            <div class="cta-buttons">
+                <a href="#phases" class="btn btn-primary">Start Your Journey</a>
+                <a href="#resources" class="btn btn-secondary">Learn Resources</a>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview">
+        <div class="container">
+            <h2>📋 Challenge Overview</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                This comprehensive 90-day challenge is designed to transform you from a beginner into a proficient cybersecurity professional. 
+                Through 4 distinct phases, you'll master networking, cryptography, web security, penetration testing, and advanced exploitation techniques.
+            </p>
+            <div style="background: var(--secondary); border-left: 4px solid var(--accent); padding: 2rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+                <h3>Daily Time Commitment: 5-7 hours</h3>
+                <ul style="list-style: none; color: var(--text-muted);">
+                    <li>📚 <strong>Morning (2h):</strong> Theory & Concepts</li>
+                    <li>💻 <strong>Practice (2-3h):</strong> Hands-on Labs</li>
+                    <li>🧪 <strong>Evening (1-2h):</strong> Projects & Documentation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phases -->
+    <section id="phases">
+        <div class="container">
+            <h2>🎯 4 Core Phases</h2>
+            <div class="phases-grid">
+                <!-- Phase 1 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">1️⃣</div>
+                        <div>
+                            <div class="phase-title">Foundations</div>
+                            <div class="phase-days">Days 1-30</div>
+                        </div>
+                    </div>
+                    <div class="phase-description">Build your foundation with networking, Linux, and security fundamentals</div>
+                    <ul class="phase-topics">
+                        <li>Cybersecurity Basics</li>
+                        <li>Networking (OSI, TCP/IP)</li>
+                        <li>Linux Mastery</li>
+                        <li>System Administration</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">2️⃣</div>
+                        <div>
+                            <div class="phase-title">Core Skills</div>
+                            <div class="phase-days">Days 31-60</div>
+                        </div>
+                    </div>
+                    <div class="phase-description">Master cryptography and web security vulnerabilities</div>
+                    <ul class="phase-topics">
+                        <li>Cryptography</li>
+                        <li>SSL/TLS Protocols</li>
+                        <li>OWASP Top 10</li>
+                        <li>Web Exploitation</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">3️⃣</div>
+                        <div>
+                            <div class="phase-title">Penetration Testing</div>
+                            <div class="phase-days">Days 61-75</div>
+                        </div>
+                    </div>
+                    <div class="phase-description">Learn reconnaissance and network exploitation techniques</div>
+                    <ul class="phase-topics">
+                        <li>Reconnaissance</li>
+                        <li>Port Scanning</li>
+                        <li>Vulnerability Scanning</li>
+                        <li>Network Exploitation</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <div class="phase-number">4️⃣</div>
+                        <div>
+                            <div class="phase-title">Advanced Topics</div>
+                            <div class="phase-days">Days 76-90</div>
+                        </div>
+                    </div>
+                    <div class="phase-description">Master exploitation, forensics, and defensive security</div>
+                    <ul class="phase-topics">
+                        <li>Privilege Escalation</li>
+                        <li>Post-Exploitation</li>
+                        <li>Forensics & Analysis</li>
+                        <li>Incident Response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools">
+        <div class="container">
+            <h2>🛠️ Essential Tools to Master</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>🔍 Reconnaissance</h4>
+                    <ul>
+                        <li>Nmap</li>
+                        <li>Masscan</li>
+                        <li>Shodan</li>
+                        <li>theHarvester</li>
+                        <li>Maltego</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h4>🔎 Scanning & Enumeration</h4>
+                    <ul>
+                        <li>OpenVAS</li>
+                        <li>Qualys</li>
+                        <li>Nexpose</li>
+                        <li>Wireshark</li>
+                        <li>Burp Suite</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h4>⚔️ Exploitation</h4>
+                    <ul>
+                        <li>Metasploit</li>
+                        <li>SQLMap</li>
+                        <li>Empire</li>
+                        <li>Mimikatz</li>
+                        <li>BeEF</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h4>🔐 Post-Exploitation</h4>
+                    <ul>
+                        <li>Meterpreter</li>
+                        <li>Empire Framework</li>
+                        <li>Covenant</li>
+                        <li>Sliver</li>
+                        <li>PoshC2</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h4>🔬 Forensics</h4>
+                    <ul>
+                        <li>Volatility</li>
+                        <li>EnCase</li>
+                        <li>FTK</li>
+                        <li>Autopsy</li>
+                        <li>YARA</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <h4>🛡️ Defense & Analysis</h4>
+                    <ul>
+                        <li>SIEM Tools</li>
+                        <li>IDS/IPS</li>
+                        <li>EDR Solutions</li>
+                        <li>Suricata</li>
+                        <li>Snort</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones -->
+    <section id="milestones">
+        <div class="container">
+            <h2>📍 Weekly Milestones</h2>
+            <div class="milestones">
+                <div class="milestone">
+                    <div class="milestone-week">Week 1-2</div>
+                    <div class="milestone-task">Master OSI Model & Networking Basics</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-week">Week 3-4</div>
+                    <div class="milestone-task">Linux CLI & Shell Scripting Mastery</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-week">Week 5-6</div>
+                    <div class="milestone-task">Cryptography & Encryption Techniques</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-week">Week 7-8</div>
+                    <div class="milestone-task">Identify & Exploit OWASP Top 10</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-week">Week 9-10</div>
+                    <div class="milestone-task">Network Reconnaissance & Scanning</div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-week">Week 11-12</div>
+                    <div class="milestone-task">Complete Penetration Test & Defense</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section id="metrics">
+        <div class="container">
+            <h2>✅ Success Metrics & Goals</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">📚</div>
+                    <div class="metric-day">Day 30</div>
+                    <div class="metric-description">Comfortable with Linux and networking fundamentals</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🔐</div>
+                    <div class="metric-day">Day 60</div>
+                    <div class="metric-description">Identify and exploit OWASP Top 10 vulnerabilities</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-day">Day 75</div>
+                    <div class="metric-description">Perform complete network reconnaissance and scanning</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🏆</div>
+                    <div class="metric-day">Day 90</div>
+                    <div class="metric-description">Conduct professional penetration tests independently</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources">
+        <div class="container">
+            <h2>📚 Learning Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <span class="resource-type">Platform</span>
+                    <h4>TryHackMe</h4>
+                    <p>Interactive labs and challenges for beginners and intermediate learners</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-type">Platform</span>
+                    <h4>HackTheBox</h4>
+                    <p>Advanced penetration testing labs and CTF challenges</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-type">Platform</span>
+                    <h4>PortSwigger Academy</h4>
+                    <p>Complete web security training with interactive labs</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-type">Certification</span>
+                    <h4>CEH (Ethical Hacker)</h4>
+                    <p>Industry standard certification for cybersecurity professionals</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-type">Certification</span>
+                    <h4>OSCP</h4>
+                    <p>Offensive Security Certified Professional - Advanced penetration testing</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-type">Certification</span>
+                    <h4>Security+</h4>
+                    <p>CompTIA foundational security certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethics Section -->
+    <section id="ethics">
+        <div class="container">
+            <h2>⚖️ Ethical Hacking Guidelines</h2>
+            <div class="ethical-banner">
+                <h3>⚠️ Important: Legal & Ethical Responsibilities</h3>
+                <ul>
+                    <li>Unauthorized system access is illegal</li>
+                    <li>Always obtain written permission before testing</li>
+                    <li>Operate within defined scope only</li>
+                    <li>Never steal or modify data</li>
+                    <li>Report vulnerabilities responsibly</li>
+                    <li>Maintain confidentiality of findings</li>
+                    <li>Follow responsible disclosure practices</li>
+                    <li>Only test systems you own or have permission for</li>
+                </ul>
+            </div>
+            
+            <div style="background: var(--secondary); border-radius: 0.75rem; padding: 2rem; margin-top: 2rem;">
+                <h3>🌟 Bug Bounty Programs</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Apply your skills legally and earn rewards:</p>
+                <ul style="list-style: none; color: var(--text-muted);">
+                    <li>✓ HackerOne - Largest bug bounty platform</li>
+                    <li>✓ Bugcrowd - Corporate bug bounties</li>
+                    <li>✓ Intigriti - European bug bounty platform</li>
+                    <li>✓ YesWeHack - International platform</li>
+                    <li>✓ Company-specific programs - Direct security programs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>🎓 Hands-On Projects</h2>
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <h3>Project 1: Secure System Setup</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Weeks 3-4</p>
+                    <p style="color: var(--text-muted);">Set up a secure Linux server with firewall rules, SSH hardening, and monitoring systems</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Project 2: Vulnerability Assessment</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Weeks 7-8</p>
+                    <p style="color: var(--text-muted);">Scan networks, run vulnerability assessments, document findings with remediation plans</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Project 3: Penetration Test Lab</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Weeks 10-11</p>
+                    <p style="color: var(--text-muted);">Perform complete penetration test on a vulnerable lab environment and document results</p>
+                </div>
+                <div class="phase-card">
+                    <h3>Project 4: Security Tool Development</h3>
+                    <p style="color: var(--text-muted); margin: 1rem 0;">Week 12</p>
+                    <p style="color: var(--text-muted);">Write Python security tools for automation, scanning, and alerting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips">
+        <div class="container">
+            <h2>💡 Success Tips</h2>
+            <div style="background: linear-gradient(135deg, var(--secondary) 0%, rgba(30, 41, 59, 0.5) 100%); border-radius: 1rem; padding: 2rem;">
+                <ul style="list-style: none; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <li><strong style="color: var(--accent);">📈 Consistency Over Intensity</strong><br>Practice daily rather than cramming</li>
+                    <li><strong style="color: var(--accent);">🤝 Join Communities</strong><br>Connect with other cybersecurity learners</li>
+                    <li><strong style="color: var(--accent);">📝 Document Everything</strong><br>Write detailed notes and writeups</li>
+                    <li><strong style="color: var(--accent);">🔬 Build Labs</strong><br>Create virtual environments to practice safely</li>
+                    <li><strong style="color: var(--accent);">🏁 Participate in CTFs</strong><br>Capture The Flag competitions sharpen skills</li>
+                    <li><strong style="color: var(--accent);">🎓 Get Certified</strong><br>Pursue industry certifications (CEH, OSCP)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(15, 23, 42, 0) 100%); text-align: center; padding: 4rem 2rem;">
+        <div class="container">
+            <h2>🚀 Ready to Start Your Cybersecurity Journey?</h2>
+            <p style="color: var(--text-muted); margin: 1rem 0 2rem; font-size: 1.1rem;">
+                Begin your 90-day challenge today and transform into a cybersecurity professional
+            </p>
+            <div class="cta-buttons">
+                <a href="https://www.tryhackme.com" class="btn btn-primary">Start on TryHackMe</a>
+                <a href="https://www.hackthebox.com" class="btn btn-secondary">Try HackTheBox</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>🔒 CyberMastery - 90 Day Challenge</h3>
+            <div class="footer-links">
+                <a href="#phases">Phases</a>
+                <a href="#tools">Tools</a>
+                <a href="#resources">Resources</a>
+                <a href="#ethics">Ethics</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="GitHub">GitHub</a>
+                <a href="#" title="Twitter">Twitter</a>
+                <a href="#" title="LinkedIn">LinkedIn</a>
+                <a href="#" title="Discord">Discord</a>
+            </div>
+            <p style="margin-top: 2rem;">
+                <strong>Remember:</strong> All hacking activities must be legal and ethical. <br>
+                Always obtain written permission before testing any systems.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                © 2024 CyberMastery. Made with ❤️ for cybersecurity learners worldwide
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.phase-card, .tool-card, .milestone, .metric-card, .resource-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
